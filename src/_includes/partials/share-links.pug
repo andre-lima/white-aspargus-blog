@@ -1,0 +1,14 @@
+.shareContainer.container
+  h1.shareTitle Share on
+  .shareLinks
+    .shareLink.facebook
+      a(href=(config.share.facebook + config.baseUrl + page.url), target="_blank")
+        img.logo(src="/assets/images/share/facebook.svg", alt="share on facebook")
+    .shareLink.twitter
+      a(href=(config.share.twitter + config.baseUrl + page.url), target="_blank")
+        img.logo(src="/assets/images/share/twitter.svg", alt="share on twitter")
+    .shareLink.reddit
+      a(href=(config.share.reddit + config.baseUrl + page.url), target="_blank")
+        img.logo(src="/assets/images/share/reddit.svg", alt="share on reddit")
+
+        

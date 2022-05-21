@@ -1,0 +1,12 @@
+{
+  "blogTitle": "White Aspargus",
+  "blogTagline": "Cooking... for the divorced mom and dad!",
+  "postListLimit": 1000000,
+  "tagSeparator": "·",
+  "baseUrl": "https://www.andredantas.me",
+  "share": {
+    "facebook": "https://www.facebook.com/sharer/sharer.php?u=",
+    "twitter": "https://twitter.com/intent/tweet?text=[Your%20text%20here!]%20",
+    "reddit": "http://reddit.com/submit?title=Awesome article!&url="
+  }
+}

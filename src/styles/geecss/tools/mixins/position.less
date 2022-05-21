@@ -1,0 +1,88 @@
+.z(@element) {
+  & when (@element = loading) {
+    z-index: @zindex[loading]; // 10000
+  }
+
+  & when (@element = modal) {
+    z-index: @zindex[modal]; // 9000
+  }
+
+  & when (@element = overlay) {
+    z-index: @zindex[overlay]; // 8000
+  }
+
+  & when (@element = dropdown) {
+    z-index: @zindex[dropdown]; // 7000
+  }
+
+  & when (@element = header) {
+    z-index: @zindex[header]; // 6000
+  }
+
+  & when (@element = footer) {
+    z-index: @zindex[footer]; // 5000
+  }
+
+  & when (@element = bump) {
+    z-index: @zindex[bump]; // 10
+  }
+
+  & when (isnumber(@element)) {
+    z-index: @element; // Custom value
+  }
+}
+
+// Centering a block element
+.center-block() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Applied to absolute positioned children
+.horizontal-center-element() {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Flex parent
+.flex(@ai: initial, @jc: initial) {
+  display: flex;
+  align-items: @ai;
+  justify-content: @jc;
+}
+
+.flex-center(@horizontal: true) {
+  display: flex;
+  align-items: center;
+
+  & when (@horizontal = true) {
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
+}
+
+// Applied to absolute positioned children
+.vertical-center-element(@position: absolute) {
+  position: @position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Applied to absolute positioned children
+.center-element(@position: absolute) {
+  position: @position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Completely hidden
+.remove-element() {
+  display: none !important;
+}
+
+// Readable with screen readers and focusable
+.hide-element() {
+  position: absolute;
+  left: -9999px;
+}

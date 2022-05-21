@@ -1,0 +1,75 @@
+doctype html
+html(lang='en')
+  head
+    title= config.blogTitle
+    link(rel="icon", type="images/png", href="/assets/favicon/my_pic.gif", sizes="64x64")
+    link(rel="stylesheet", href="/assets/css/main.min.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:400,600&display=swap")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700&display=swap")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    meta(name="description" content="Andre Blog")
+    meta(name="keywords", content="andre dantas lima, programmer, montreal, web, frontend, skills, projects, blog, post")
+
+
+  body
+    div.banner
+      div.banner-container
+        h1.banner-title= config.blogTitle
+        p.banner-text
+          span= config.blogTagline
+
+    main.blogMain
+
+      div.blogPosts.container
+        h2.blogPosts-title Latest & Highlighted
+        div.separator
+        ul.blogPosts-list
+          each post, index in collections.post.sort((a,b) => b.date - a.date)
+            if post.data.highlighted
+              li.blogPosts-item
+                a(href="posts/" + post.data.slug, class=post.data.extraClass).blogPosts-itemText= post.data.title
+                div.blogPosts-itemDate= post.data.date
+                  span.blogPosts-tags= config.tagSeparator
+                    each tag, index in post.data.tags
+                      if (tag == 'post' || tag == 'dev')
+                        - continue
+                      span.blogPosts-tag= tag
+                      if index < post.data.tags.length - 1
+                        span.tagSeparator= config.tagSeparator
+
+      div.blogPosts.container
+        h2.blogPosts-title Other Awesome Posts
+        div.separator
+        ul.blogPosts-list
+          each post, index in collections.post
+            if !post.data.highlighted
+              if index < config.postListLimit
+                li.blogPosts-item
+                  a(href="posts/" + post.data.slug, class=post.data.extraClass).blogPosts-itemText= post.data.title
+                  div.blogPosts-itemDate= post.data.date
+                    span.blogPosts-tags= config.tagSeparator
+                      each tag, index in post.data.tags
+                        if (tag == 'post' || tag == 'dev')
+                          - continue
+                        span.blogPosts-tag= tag
+                        if index < post.data.tags.length - 1
+                          span.tagSeparator= config.tagSeparator
+
+    div.footer
+
+      div.disclaimer.cookies.container
+        h2.disclaimer-title This Website Uses Cookies
+        div.separator
+        p.disclaimer-text We use third-party cookies (Google Analytics and Google Adsense) to deliver our online services and better tailor content relevant to you. By continuing to browse, you agree to our use of cookies.
+
+      //- div.disclaimer
+      //-   blockquote
+      //-     h2.disclaimer-title Quick disclaimer
+      //-     p.disclaimer-text I develop on Ubuntu Linux. Although most subjects dicussed here are applied to development on Mac or Windows, you may find things that don't translate 100% to these operating systems.
+
+
+
+
+
+      //- include /partials/blog-footer.pug

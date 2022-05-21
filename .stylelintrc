@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-recommended",
+  "plugins": [
+  ],
+  "rules": {
+    at-rule-no-unknown: false,
+    "max-nesting-depth": [2, {
+      "ignore": ["blockless-at-rules", "pseudo-classes"]
+    }]
+  }
+}

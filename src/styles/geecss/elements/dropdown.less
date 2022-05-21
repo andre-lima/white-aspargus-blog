@@ -1,0 +1,56 @@
+:root {
+  --dropdown-arrow-left-margin: var(--space-xxs);
+  --dropdown-button-spacing: 0 var(--space-xs) var(--space-sm) 0;
+  --dropdown-close-size: 36px;
+  --dropdown-close-bottom: -45px;
+  --dropdown-close-bottom-desktop: -45px;
+  --dropdown-title-size: var(--text-sm);
+  --dropdown-close-opacity: 0.9;
+  --dropdown-close-opacity-hover: 1;
+  --dropdown-close-opacity-active: 0.7;
+  --menu-arrow-transform: scale(1, -1);
+}
+
+// For dropdowns added inside a button element
+.dropdown-arrow() {
+  picture:last-child {
+    margin-left: 5px;
+  }
+
+  & picture {
+    transition: transform 0.3s;
+  }
+
+  &.open {
+    // Changes button styles
+    --menu-button-bg: var(--menu-button-bg-active);
+    box-shadow: var(--shadow-active);
+
+    & picture:not(.calendarIcon) {
+      transform: var(--menu-arrow-transform);
+    }
+  }
+}
+
+.dropdown-close-effects() {
+  .remove-button-shadows();
+  --dropdown-close-shadow: 0 4px 10px transparent;
+  filter: drop-shadow(var(--dropdown-close-shadow));
+  opacity: var(--dropdown-close-opacity);
+  transition: opacity 0.3s;
+
+  &:hover {
+    --dropdown-close-opacity: var(--dropdown-close-opacity-hover);
+    --dropdown-close-shadow: var(--shadow-hover);
+  }
+
+  &:active {
+    --dropdown-close-opacity: var(--dropdown-close-opacity-active);
+    --dropdown-close-shadow: var(--shadow-active);
+    outline: none;
+  }
+
+  // &.pressed {
+  // For when we'll have animations, we need to tweak the style a bit before the button disappears completely.
+  // }
+}

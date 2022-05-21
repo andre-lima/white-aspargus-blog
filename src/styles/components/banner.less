@@ -1,0 +1,48 @@
+.banner {
+  --content-padding: var(--space-sm);
+  // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23252525' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  // background: url("/assets/images/binary_bg.svg");
+  .content-padding();
+  background-color: var(--murmur);
+  // text-align: center;
+}
+
+.banner-title {
+  .limited-width();
+  color: var(--black);
+  font-weight: var(--light);
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+}
+
+.banner-text {
+  max-width: 500px;
+
+  &:not(:last-child) {
+    margin: var(--space-xs) 0;
+  }
+
+  span {
+    text-align: right;
+    background-color: var(--black);
+    color: var(--inverted-text-color);
+    padding: var(--space-xxs);
+    line-height: 1;
+    box-decoration-break: clone;
+  }
+}
+
+.banner-buttons {
+  .flex(center);
+  & > * {
+    margin-right: var(--space-xxs);
+  }
+}
+
+.banner-buttons a {
+  transition: background-color 0.3s;
+  // color: inherit;
+  .primary-button();
+}

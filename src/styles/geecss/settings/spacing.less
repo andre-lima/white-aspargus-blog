@@ -1,0 +1,18 @@
+// Values to be used on margins and paddings throughout the portal
+:root {
+  --space-none: 0;
+  --space-xxs: 5px;
+  --space-xs: 10px;
+  --space-xsm: 15px;
+  --space-sm: 20px;
+  --space-md: 30px;
+  --space-lg: 40px;
+  --space-xl: 50px;
+
+  --basic-radius: 0;
+}
+
+// If content fails to load, avoid having the content padding applied anyways.
+* > *:empty {
+  padding: 0;
+}

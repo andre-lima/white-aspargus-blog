@@ -1,0 +1,103 @@
+@import (once) "../../settings/breakpoints.less";
+
+/**
+ * Media Query mixin
+ * @param {string} @range The name of the size range to apply the media query to.
+ * @param {@rules} @rules The styles to be applied on this size range
+ * @description:
+ *     These are the options we can pass as a @range value
+ *         phone-down
+ *         phone-up
+ *         phone-only
+ *         tablet-up
+ *         tablet-only
+ *         desktop-up
+ *         desktop-only
+ *         desktop-big-up
+ *         no-desktop
+ */
+.mq(@range; @rules; @range-type: min) {
+  // When passed a number
+  & when (isnumber(@range)) and (@range-type = min) {
+    @media only screen and (min-width: @range) {
+      @rules();
+    }
+  }
+
+  // When passed a number
+  & when (isnumber(@range)) and (@range-type = max) {
+    @media only screen and (max-width: @range) {
+      @rules();
+    }
+  }
+
+  // Used only on smaller sizes than a Phone
+  & when (@range = phone-down) {
+    @media only screen and (max-width: @tiny-max) {
+      @rules();
+    }
+  }
+
+  // Used on sizes starting on Phone and higher (Only use this if you don't want to apply this style on sizes smaller than Phone)
+  & when (@range = phone-up) {
+    @media only screen and (min-width: @phone) {
+      @rules();
+    }
+  }
+
+  // Used on Phone only sizes
+  & when (@range = phone-only) {
+    @media only screen and (min-width: @phone) and (max-width: @phone-max) {
+      @rules();
+    }
+  }
+
+  // Used on sizes starting on Tablet and higher
+  & when (@range = tablet-up) {
+    @media only screen and (min-width: @tablet) {
+      @rules();
+    }
+  }
+
+  // Used on Tablet only sizes
+  & when (@range = tablet-only) {
+    @media only screen and (min-width: @tablet) and (max-width: @tablet-max) {
+      @rules();
+    }
+  }
+
+  // Used on sizes starting on Desktop and higher
+  & when (@range = desktop-up) {
+    @media only screen and (min-width: @desktop) {
+      @rules();
+    }
+  }
+
+  // Used on sizes starting on Desktop and higher
+  & when (@range = desktop-only) {
+    @media only screen and (min-width: @desktop) and (max-width: @desktop-max) {
+      @rules();
+    }
+  }
+
+  // Used on sizes starting on Desktop and higher
+  & when ((@range = desktop-big-up) or (@range = desktop-big-only)) {
+    @media only screen and (min-width: @desktop-big) {
+      @rules();
+    }
+  }
+
+  // Used on Phone and Tablet only sizes
+  & when (@range = no-desktop) {
+    @media only screen and (max-width: @tablet-max) {
+      @rules();
+    }
+  }
+
+  // Used on landscape orientations
+  & when (@range = landscape) {
+    @media only screen and (orientation: landscape) and (max-width: @tablet-max) {
+      @rules();
+    }
+  }
+}

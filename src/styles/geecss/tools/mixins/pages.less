@@ -1,0 +1,32 @@
+.limited-width() {
+  .mq(tablet-up; {.center-block() ; max-width: var(--content-max-width) ;});
+}
+
+.content-padding(@vertical: true, @horizontal: true) {
+  padding: var(--content-padding);
+
+  & when not (@vertical) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  & when not (@horizontal) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.error {
+  header,
+  footer {
+    display: none;
+  }
+
+  &:before {
+    height: 0;
+  }
+
+  main {
+    margin-top: 0;
+  }
+}

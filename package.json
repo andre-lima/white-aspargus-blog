@@ -1,0 +1,26 @@
+{
+  "name": "personal-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run less:watch\"  \"npx @11ty/eleventy --input=./src --serve\" ",
+    "prestart": "rm -rf _site && mkdir -p _site",
+    "build": "npm run less:compile  && npx @11ty/eleventy --input=./src",
+    "postbuild": "mkdir -p _site && cd Personal-Website && npm run build && mv dist/* ../_site",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less:watch": "less-watch-compiler --config less.watch.json",
+    "less:compile": "less-watch-compiler --config less.build.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "concurrently": "^5.0.0",
+    "less-watch-compiler": "^1.14.1",
+    "prettier": "^1.18.2",
+    "stylelint": "^14.8.2",
+    "stylelint-config-recommended": "^3.0.0"
+  }
+}

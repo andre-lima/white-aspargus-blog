@@ -1,0 +1,27 @@
+---
+tags:
+  - post
+  - games
+  - game development
+date: "2020-03-14"
+highlighted: true
+slug: game-career
+title: My partially failed career as a Game Developer
+commentCTA: "And there you go!"
+imageId: 10
+boxBg: "rgba(150,100,100,0.5)"
+---
+
+Talk about how simpler tools, with gentle learning curves gain popularity but can be a trap for bigger problems.
+Simple tools hook in developers, specially newbies, but become complex to scale.
+Since they're already used to it, plugins, hackes and bad practices become the norm.
+
+React vs Angular
+CSS Frameworks vs Semantic CSS
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8408997319480333"
+     data-ad-slot="7687766604"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>

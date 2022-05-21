@@ -1,0 +1,42 @@
+// Grid mixins
+.grid(@type: content) {
+  & when (@type = content) {
+    display: grid;
+    grid-column-gap: var(--col-gap);
+    grid-template-columns: repeat(var(--num-of-columns, 12), minmax(0, 1fr));
+  }
+
+  & when (@type = carousel) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 0;
+  }
+
+  & when (@type = page-nav) {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  & when (@type = header-main) {
+    display: grid;
+    grid-column-gap: var(--col-gap);
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: 1fr auto auto;
+  }
+
+  & when (@type = footer) {
+    display: grid;
+    grid-row-gap: var(--footer-row-gap);
+  }
+
+  & when (@type = details-card) {
+    display: grid;
+    grid-template-areas: "image information" "button button";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    .mq(tablet-up, {grid-template-areas: "image information" "image button" ;});
+  }
+}

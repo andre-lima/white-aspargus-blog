@@ -1,0 +1,22 @@
+.blogFooter {
+  background-color: var(--black);
+  .content-padding();
+  .flex(center, center);
+
+  &-title {
+    font-size: var(--text-xl);
+  }
+
+  &-links {
+    .flex();
+  }
+
+  &-link {
+    margin: 0 var(--space-md);
+
+    a,
+    a:visited {
+      color: var(--inverted-text-color);
+    }
+  }
+}

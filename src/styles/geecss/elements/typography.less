@@ -1,0 +1,110 @@
+@import (reference) "../tools/all.less";
+
+:root {
+  /* set base values */
+  --font-heading: "Work Sans", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --text-base-size: var(--text-sm-fixed);
+
+  /* set font sizes */
+  --text-mice: 0.25em;
+  --text-xs: 0.64em;
+  --text-sm: 0.8em;
+  --text-md: 1em;
+  --text-lg: 1.25em;
+  --text-xl: 1.56em;
+  --text-xxl: 1.95em;
+  --text-xxxl: 2.44em;
+  --text-xxxxl: 3.05em;
+
+  // When base font is 16px and --text-base-size is 1em, the variables above will have the following values
+  --text-mice-fixed: 4px;
+  --text-xs-fixed: 10px;
+  --text-sm-fixed: 13px;
+  --text-md-fixed: 16px;
+  --text-lg-fixed: 20px;
+  --text-xl-fixed: 25px;
+  --text-xxl-fixed: 31px;
+  --text-xxxl-fixed: 39px;
+  --text-xxxxl-fixed: 49px;
+
+  /* font weights */
+  --heavy: 900;
+  --bold: 700;
+  --normal: 400;
+  --light: 300;
+
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.4;
+
+  /* Bullet lists */
+  --bullet-color: var(--gray);
+}
+
+body {
+  .mq(desktop-up, {--text-base-size: var(--text-md-fixed) ;});
+
+  font-size: var(--text-base-size);
+  font-family: var(--font-body);
+  color: var(--text-color);
+}
+
+// Replacing custom bullet points for a more customizable one
+// ul li::before {
+//   /* Unicode of character to precede the list item */
+//   content: "\2022";
+
+//   color: var(--bullet-color);
+//   padding-right: var(--text-xs);
+//   position: relative;
+//   top: 0em;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--light);
+  line-height: var(--heading-line-height);
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: var(--text-xxxxl);
+}
+
+h2 {
+  font-size: var(--text-xxxl);
+}
+
+h3 {
+  font-size: var(--text-xxl);
+}
+
+h4 {
+  font-size: var(--text-xl);
+}
+
+h5 {
+  font-size: var(--text-lg);
+}
+
+h6 {
+  font-size: var(--text-md);
+}
+
+p,
+div {
+  font-size: var(--text-md);
+  line-height: var(--body-line-height);
+  font-family: var(--font-body);
+}
+
+.parent-font() {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}

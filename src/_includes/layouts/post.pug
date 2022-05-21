@@ -1,0 +1,32 @@
+doctype html
+include /mixins/post-title.pug
+
+html(lang='en')
+  head
+    title= title
+    link(rel="icon", type="images/png", href="/assets/favicon/my_pic.gif", sizes="64x64")
+    link(rel="stylesheet", href="/assets/css/main.min.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:400,600&display=swap")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Work+Sans:300,400&display=swap")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    meta(name="description" content="Andre Blog Post")
+    meta(name="keywords", content="andre dantas lima, programmer, montreal, web, frontend, cooking, skills, projects, blog, " + tags.join(', '))
+
+
+  body
+    include /partials/blog-header.pug
+
+    main
+      +post-title(title, date, tags)
+
+      include /partials/share-links.pug
+
+      div.postContent-container.post.container !{content}
+
+      include /partials/share-links.pug
+
+    include /partials/blog-footer.pug
+
+    script.
+      (adsbygoogle = window.adsbygoogle || []).push({});

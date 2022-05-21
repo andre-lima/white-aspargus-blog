@@ -1,0 +1,28 @@
+:root {
+  --separator-width: 25px;
+  --separator-height: 2px;
+  --separator-border-radius: 1px;
+  --separator-background-color: var(--alert);
+
+  --showreel-separator-margin-top: var(--space-xs);
+  --showreel-separator-tablet-margin-top: var(--space-sm);
+
+  --hero-separator-margin-top: var(--space-xsm);
+  --hero-separator-tablet-margin-top: var(--space-xsm);
+}
+.separator(@parent: null) {
+  width: var(--separator-width);
+  height: var(--separator-height);
+  border-radius: var(--separator-border-radius);
+  background-color: var(--separator-background-color);
+
+  & when (@parent = showreel) {
+    margin-top: var(--showreel-separator-margin-top);
+    .mq(tablet-up, {margin-top: var(--showreel-separator-tablet-margin-top)});
+  }
+
+  & when (@parent = hero) {
+    margin-top: var(--hero-separator-margin-top);
+    .mq(tablet-up, {margin-top: var(--hero-separator-tablet-margin-top)});
+  }
+}

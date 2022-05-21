@@ -1,0 +1,3 @@
+[submodule "Personal-Website"]
+	path = Personal-Website
+	url = https://github.com/andre-lima/Personal-Website.git

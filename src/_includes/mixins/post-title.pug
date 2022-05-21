@@ -1,0 +1,15 @@
+mixin post-title(title, date, tags)
+  div.postTitle(style={'background-image': 'url(/assets/images/banners/' + imageId + '.jpg)'})
+    div.postTitle-container.container
+      div.postTitle-content(style={'background-color': boxBg})
+        h1.postTitle-text= title
+        h2.postSubtitle-text= subtitle
+        div.postDate= date
+        div.tags Topics:&nbsp
+          each tag, index in tags
+            if (tag == 'post' || tag == 'dev')
+              - continue
+            //- a(href="/blog/tags/" + tag).tag= tag
+            span.tag= tag
+            if index < tags.length - 1
+              span.tagSeparator= config.tagSeparator

@@ -1,0 +1,10 @@
+footer.blogFooter
+  nav.blogFooter-navigation
+    ul.blogFooter-links
+      if page.fileSlug != 'blog'
+        li.blogFooter-link
+          a.menuLink(href="/blog") Blog
+      li.blogFooter-link
+        a.menuLink(href="/") My homepage
+      li.blogFooter-link
+        a.menuLink(href=config.twitterLink, target="_blank") Twitter

@@ -1,0 +1,79 @@
+.blogMain {
+  --content-max-width: 900px;
+  .limited-width();
+  margin-top: var(--space-sm);
+  // display: flex;
+  // flex-wrap: wrap;
+  width: 100%;
+
+  .mq(desktop-up, {margin-top: var(--space-sm) ;});
+  & > * {
+    flex-basis: 300px;
+    flex-grow: 1;
+  }
+}
+
+.blogPosts {
+  line-height: 1;
+
+  &-list {
+    margin-top: var(--space-md);
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: var(--light);
+    // font-size: var(--text-xl);
+  }
+
+  &-item {
+    .content-title-link();
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  &-itemText {
+    color: var(--primary);
+    font-size: var(--text-xl);
+    // font-weight: var(--bold);
+  }
+
+  &-itemDate {
+    font-size: var(--text-sm);
+  }
+
+  &-tags,
+  &-tag {
+    margin: 0 var(--space-xxs);
+    font-weight: var(--bold);
+  }
+}
+
+.footer {
+  background-color: var(--primary);
+}
+
+.separator {
+  .separator();
+  margin: var(--space-xxs) 0 var(--space-xs) 0;
+}
+
+.disclaimer {
+  color: var(--footer-text);
+
+  &-title {
+    font-size: var(--text-lg);
+
+    // margin-bottom: var(--space-xs);
+  }
+
+  &.cookies {
+    blockquote {
+      background-color: var(--warning);
+    }
+  }
+}
+
+a.recipe {
+  color: var(--carnation);
+}

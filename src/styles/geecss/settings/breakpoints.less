@@ -1,0 +1,28 @@
+:root {
+  --mobile: 320px;
+  --tablet: 668px;
+  --desktop: 1024px;
+
+  // Max width of main page content
+  --content-max-width: 500px;
+  .mq(desktop-up ; {--content-max-width: 650px;});
+
+  // @media only screen and (min-width: @desktop-max-content-width) {
+  //   --content-max-width: 800px !important;
+  // }
+}
+
+// LESS variables --------------------------
+
+// Sizes which each breakpoint starts
+@phone: 320px;
+@tablet: 668px;
+@desktop: 1024px;
+@desktop-big: 1440px;
+@desktop-max-content-width: 1200px;
+
+// Sizes which each breakpoint ends
+@tiny-max: @phone - 1;
+@phone-max: @tablet - 1;
+@tablet-max: @desktop - 1;
+@desktop-max: @desktop-big - 1;
